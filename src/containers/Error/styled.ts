@@ -6,9 +6,11 @@ export const Wrapper = styled.main`
   justify-content: center;
   align-items: center;
   text-align: center;
+
   h1 {
     font-size: 10rem;
   }
+
   h3 {
     text-transform: none;
     margin-bottom: 2rem;

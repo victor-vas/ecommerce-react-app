@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
     display: flex;
-
     align-items: center;
   }
 
