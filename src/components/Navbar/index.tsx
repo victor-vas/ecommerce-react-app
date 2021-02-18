@@ -4,8 +4,11 @@ import logo from '../../assets/logo.svg';
 import { NavContainer } from './styled';
 import { links, ILink } from '../../utils/constants';
 import CartButtons from '../CartButtons';
+import { useProductsContext } from '../../context/productsContext';
 
 const Nav = () => {
+  const { openSidebar } = useProductsContext();
+
   return (
     <NavContainer>
       <div className="nav-center">
@@ -13,7 +16,7 @@ const Nav = () => {
           <Link to="/">
             <img src={logo} alt="Comfy Sloth" />
           </Link>
-          <button type="button" className="nav-toggle">
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
