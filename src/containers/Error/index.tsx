@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Wrapper } from './styled';
 
-const ErrorPage = () => {
+const Error = () => {
   return (
     <Wrapper className="page-100">
       <section>
@@ -15,4 +15,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default Error;

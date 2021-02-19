@@ -6,7 +6,14 @@ export interface ILink {
   url: string;
 }
 
-export const links = [
+export interface IServices {
+  id: number;
+  icon: JSX.Element;
+  title: string;
+  text: string;
+}
+
+export const links: ILink[] = [
   {
     id: 1,
     text: 'home',
@@ -24,7 +31,7 @@ export const links = [
   },
 ];
 
-export const services = [
+export const services: IServices[] = [
   {
     id: 1,
     icon: <GiCompass />,
