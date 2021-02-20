@@ -5,7 +5,7 @@ import { Wrapper } from './styled';
 const About = () => {
   return (
     <main>
-      <PageHero title="about" />
+      <PageHero title="about" product={false} />
       <Wrapper className="page section section-center">
         <img src={aboutImg} alt="Nice Desk" />
         <article>

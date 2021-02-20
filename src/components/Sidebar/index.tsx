@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import logo from '../../assets/logo.svg';
 import { SidebarContainer } from './styled';
@@ -21,15 +21,25 @@ const Sidebar = () => {
         <ul className="links">
           {links.map(({ id, text, url }: ILink) => (
             <li key={id}>
-              <Link to={url} onClick={closeSidebar}>
-                {text}
-              </Link>
+              <NavLink
+                exact
+                to={url}
+                onClick={closeSidebar}
+                activeClassName="active"
+              >
+                <span>{text}</span>
+              </NavLink>
             </li>
           ))}
           <li>
-            <Link to="/checkout" onClick={closeSidebar}>
-              Checkout
-            </Link>
+            <NavLink
+              exact
+              to="/checkout"
+              onClick={closeSidebar}
+              activeClassName="active"
+            >
+              <span>Checkout</span>
+            </NavLink>
           </li>
         </ul>
         <CartButtons />

@@ -3,14 +3,16 @@ import { Wrapper } from './styled';
 
 interface PageHeroProps {
   title: string;
+  product: boolean;
 }
 
-const PageHero = ({ title }: PageHeroProps) => {
+const PageHero = ({ title, product }: PageHeroProps) => {
   return (
     <Wrapper>
       <div className="section-center">
         <h3>
-          <Link to="/">Home</Link>
+          <Link to="/">Home </Link>
+          {product && <Link to="/products">/ Products</Link>}
           {`/ ${title}`}
         </h3>
       </div>

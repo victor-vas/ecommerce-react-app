@@ -1,5 +1,5 @@
 import { FaBars } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import { NavContainer } from './styled';
 import { links, ILink } from '../../utils/constants';
@@ -25,7 +25,9 @@ const Nav = () => {
             const { id, text, url } = link;
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <NavLink exact to={url} activeClassName="active">
+                  {text}
+                </NavLink>
               </li>
             );
           })}

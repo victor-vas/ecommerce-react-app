@@ -74,6 +74,10 @@ export const NavContainer = styled.nav`
       }
     }
 
+    .active {
+      border-bottom: 2px solid var(--clr-primary-7);
+    }
+
     .cart-btn-wrapper {
       display: grid;
     }

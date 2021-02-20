@@ -16,9 +16,9 @@ export const SidebarContainer = styled.div`
     border-color: transparent;
     color: var(--clr-primary-5);
     transition: var(--transition);
-    cursor: pointer;
     color: var(--clr-red-dark);
     margin-top: 0.2rem;
+    cursor: pointer;
   }
 
   .close-btn:hover {
@@ -50,6 +50,15 @@ export const SidebarContainer = styled.div`
     padding-left: 2rem;
     background: var(--clr-grey-10);
     color: var(--clr-grey-2);
+    span {
+      border-bottom: 2px solid var(--clr-primary-7);
+    }
+  }
+
+  .active {
+    span {
+      border-bottom: 2px solid var(--clr-primary-7);
+    }
   }
 
   .sidebar {
