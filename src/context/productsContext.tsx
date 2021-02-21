@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useReducer } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useReducer,
+} from 'react';
 import productsReducer from '../reducers/productsReducer';
 import {
   SIDEBAR_OPEN,
@@ -11,10 +17,6 @@ import {
   GET_SINGLE_PRODUCT_ERROR,
 } from '../actions/productsActions';
 import { productsUrl } from '../utils/constants';
-
-interface ProductsProviderProps {
-  children: React.ReactNode;
-}
 
 export interface IProduct {
   id: string;
@@ -78,6 +80,10 @@ export interface ISingleProduct {
   shipping: boolean;
 }
 
+interface ProductsProviderProps {
+  children: ReactNode;
+}
+
 export interface IProductsContext {
   isSidebarOpen: boolean;
   productsLoading: boolean;
@@ -103,7 +109,7 @@ const initialState = {
   singleProduct: null,
 };
 
-const ProductsContext = React.createContext<IProductsContext>(initialState);
+const ProductsContext = createContext<IProductsContext>(initialState);
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
