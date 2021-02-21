@@ -1,6 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Footer, Navbar, Sidebar } from './components';
-import { Home, Error, About, Checkout, SingleProduct } from './containers';
+import {
+  Home,
+  Error,
+  About,
+  Checkout,
+  SingleProduct,
+  Products,
+} from './containers';
 
 const App = () => {
   return (
@@ -16,6 +23,9 @@ const App = () => {
         </Route>
         <Route exact path="/checkout">
           <Checkout />
+        </Route>
+        <Route exact path="/products">
+          <Products />
         </Route>
         <Route exact path="/products/:id">
           <SingleProduct />

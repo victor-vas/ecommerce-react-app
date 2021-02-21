@@ -8,6 +8,9 @@ import Services from './Services';
 import Contact from './Contact';
 import Loading from './Loading';
 import Error from './Error';
+import Filters from './Filters';
+import Sort from './Sort';
+import ProductList from './ProductList';
 
 export {
   Navbar,
@@ -20,4 +23,7 @@ export {
   Contact,
   Loading,
   Error,
+  Filters,
+  Sort,
+  ProductList,
 };

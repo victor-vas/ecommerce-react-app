@@ -16,11 +16,13 @@ interface FilterProviderProps {
 export interface IFilterContext {
   filteredProducts: IProduct[];
   allProducts: IProduct[];
+  gridView: boolean;
 }
 
 const intialState = {
   filteredProducts: [],
   allProducts: [],
+  gridView: true,
 };
 
 const FilterContext = createContext<IFilterContext>(intialState);
