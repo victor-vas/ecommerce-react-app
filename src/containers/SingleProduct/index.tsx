@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { Loading, Error, PageHero } from '../../components';
@@ -26,10 +28,8 @@ const SingleProduct = () => {
     if (fetchSingleProduct) {
       fetchSingleProduct(`${singleProductUrl}${id}`);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (singleProductError) {
       const interval = setInterval(() => {
@@ -38,7 +38,6 @@ const SingleProduct = () => {
 
       return () => clearInterval(interval);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [singleProductError]);
 
   if (singleProductLoading) return <Loading />;
