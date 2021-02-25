@@ -11,6 +11,7 @@ import Error from './Error';
 import Filters from './Filters';
 import Sort from './Sort';
 import ProductList from './ProductList';
+import CartContent from './CartContent';
 
 export {
   Navbar,
@@ -26,4 +27,5 @@ export {
   Filters,
   Sort,
   ProductList,
+  CartContent,
 };

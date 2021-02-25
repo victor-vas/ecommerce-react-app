@@ -7,6 +7,7 @@ import {
   Checkout,
   SingleProduct,
   Products,
+  Cart,
 } from './containers';
 
 const App = () => {
@@ -29,6 +30,9 @@ const App = () => {
         </Route>
         <Route exact path="/products/:id">
           <SingleProduct />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
         <Route path="*">
           <Error />
