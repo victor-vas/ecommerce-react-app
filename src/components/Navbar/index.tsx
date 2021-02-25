@@ -5,9 +5,11 @@ import { NavContainer } from './styled';
 import { links, ILink } from '../../utils/constants';
 import CartButtons from '../CartButtons';
 import { useProductsContext } from '../../context/productsContext';
+import { useUserContext } from '../../context/userContext';
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
 
   return (
     <NavContainer>
@@ -31,6 +33,11 @@ const Nav = () => {
               </li>
             );
           })}
+          {myUser && (
+            <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          )}
         </ul>
         <CartButtons />
       </div>

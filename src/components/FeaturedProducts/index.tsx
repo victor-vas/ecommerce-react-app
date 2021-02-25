@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { IProduct, useProductsContext } from '../../context/productsContext';
 import Error from '../Error';
 import Loading from '../Loading';
@@ -26,6 +27,9 @@ const FeaturedProducts = () => {
           <Product key={product.id} product={product} />
         ))}
       </div>
+      <Link to="/products" className="btn">
+        all products
+      </Link>
     </Wrapper>
   );
 };

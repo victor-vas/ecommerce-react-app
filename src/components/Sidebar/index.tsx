@@ -5,9 +5,11 @@ import { SidebarContainer } from './styled';
 import { links, ILink } from '../../utils/constants';
 import CartButtons from '../CartButtons';
 import { useProductsContext } from '../../context/productsContext';
+import { useUserContext } from '../../context/userContext';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
 
   return (
     <SidebarContainer>
@@ -31,16 +33,18 @@ const Sidebar = () => {
               </NavLink>
             </li>
           ))}
-          <li>
-            <NavLink
-              exact
-              to="/checkout"
-              onClick={closeSidebar}
-              activeClassName="active"
-            >
-              <span>Checkout</span>
-            </NavLink>
-          </li>
+          {myUser && (
+            <li>
+              <NavLink
+                exact
+                to="/checkout"
+                onClick={closeSidebar}
+                activeClassName="active"
+              >
+                <span>Checkout</span>
+              </NavLink>
+            </li>
+          )}
         </ul>
         <CartButtons />
       </aside>
