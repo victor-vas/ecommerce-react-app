@@ -32,8 +32,10 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [styled-components](https://styled-components.com/)
 - [auth0](https://auth0.com/)
+- [axios](https://www.npmjs.com/package/axios)
 - [react-icons](https://react-icons.github.io/react-icons/)
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+- [stripe](https://stripe.com/docs)
 
 ## :information_source: How To Use
 

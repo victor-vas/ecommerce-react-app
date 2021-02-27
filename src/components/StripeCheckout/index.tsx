@@ -127,7 +127,7 @@ const CheckoutForm = () => {
           onChange={handleChange}
         />
         <button
-          type="button"
+          type="submit"
           id="submit"
           disabled={(processing as boolean) || disabled || succeeded}
         >
