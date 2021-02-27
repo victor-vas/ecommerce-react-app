@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   LogoutOptions,
   RedirectLoginOptions,
@@ -20,7 +21,7 @@ interface IUserContext {
     options?: RedirectLoginOptions | undefined,
   ) => Promise<void>;
   logout: (options?: LogoutOptions | undefined) => void;
-  myUser: unknown | null;
+  myUser: any | null;
 }
 
 const UserContext = createContext<IUserContext>({} as IUserContext);

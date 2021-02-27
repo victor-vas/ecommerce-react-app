@@ -5,6 +5,7 @@ import {
   useEffect,
   useReducer,
 } from 'react';
+import axios from 'axios';
 import productsReducer from '../reducers/productsReducer';
 import {
   SIDEBAR_OPEN,
@@ -125,9 +126,8 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const fetchProducts = async (url: string): Promise<void> => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
-      const response = await fetch(url);
-      const products = await response.json();
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+      const response = await axios(url);
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: response.data });
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
@@ -136,9 +136,8 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const fetchSingleProduct = async (url: string): Promise<void> => {
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
-      const response = await fetch(url);
-      const singleProduct = await response.json();
-      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
+      const response = await axios(url);
+      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: response.data });
     } catch (error) {
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
     }

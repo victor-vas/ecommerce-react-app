@@ -7,7 +7,7 @@ import { Wrapper } from './styled';
 
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
-  const { totalItems } = useCartContext();
+  const { totalItems, clearCart } = useCartContext();
   const { loginWithRedirect, logout, myUser } = useUserContext();
 
   return (
@@ -23,7 +23,10 @@ const CartButtons = () => {
         <button
           type="button"
           className="auth-btn"
-          onClick={() => logout({ returnTo: window.location.origin })}
+          onClick={() => {
+            if (clearCart) clearCart();
+            logout({ returnTo: window.location.origin });
+          }}
         >
           Logout
           <FaUserMinus />
